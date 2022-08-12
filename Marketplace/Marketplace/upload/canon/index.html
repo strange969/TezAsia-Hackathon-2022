@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="undefined"></script>
+    <title>3D viewer</title>
+  </head>
+  <body>
+    <canvas class="webgl"></canvas>
+    <div
+    class="boxed"
+    style="
+      position: absolute;
+      height: 300px;
+      width: 300px;
+      margin: 50px;
+      right: 0;
+      bottom: 0;
+      border: 1px solid green;
+      border-radius: 10%;
+      background-color: #CBCE65;
+      opacity: 1;
+    "
+  >
+    <div style="width: 100%; height: 70%">
+        <p style="text-align: center; font-size: 25px;">
+     
+        Canon 
+      <br>
+          <br>
+          <br>
+         
+      <p>
+    </div>
+    <p style="text-align: center;">
+        Price : 150 Aureus
+        </p>
+
+    
+    <div
+      style="bottom: 0; right: 0; justify-content: center; text-align: center"
+    >
+        <button
+          style="
+            bottom: 0;
+            width: 150px;
+            height: 40px;
+            background-color: green;
+            opacity: 1;
+            color: #fff;
+            font-size: 25px;
+          "
+          onclick="buy()"
+        >
+          Buy
+        </button>
+      </div>
+    </div>
+    <script src="ICPHelper.js"></script>
+    <script>
+      async function buy() {
+         let actor = await window.connect();
+         alert("Bought Successfully")
+      }
+        window.connect = async function () {
+          (icpInstance = new window.ICPHelper()),
+            (icpAuthClient = await icpInstance.init()),
+            (await icpInstance.isLoggedIn()) || (await icpInstance.login()),
+            (window.accounts = icpInstance.address()),
+            (actor = icpInstance.getActor());
+            (await actor.mint(1));
+        };
+      
+    </script>
+    <script src="bundle.7b08e081419728dff5d1.js"></script>
+  </body>
+</html>

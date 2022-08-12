@@ -1,0 +1,28 @@
+{
+  "canisters": {
+    "dampire_game": {
+      "frontend": {
+        "entrypoint": "index.html"
+      },
+      "source": [
+        
+        "Marketplace/upload"
+      ],
+      "type": "assets"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "dfx": "0.10.1",
+  "networks": {
+    "local": {
+      "bind": "127.0.0.1:8000",
+      "type": "ephemeral"
+    }
+  },
+  "version": 1
+}

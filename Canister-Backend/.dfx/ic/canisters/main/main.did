@@ -1,0 +1,15 @@
+service : {
+  faucet: () -> (nat);
+  getCoin: () -> (vec nat);
+  getminer: () -> (nat);
+  hola: () -> (principal);
+  ishold: (principal, nat) -> (vec nat) query;
+  isminer: (principal) -> (nat) query;
+  isregister: () -> (nat);
+  lock: (vec nat) -> (nat);
+  matchwon: (nat) -> (nat);
+  mint: (nat) -> (nat);
+  startgame: () -> (nat);
+  wallet_balance: () -> (nat);
+  wallet_receive: () -> (record {accepted: nat;});
+}
